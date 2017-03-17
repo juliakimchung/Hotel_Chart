@@ -1,5 +1,5 @@
 let margin = { top: 20, right: 10, bottom:100, left: 40},
-	width = 700 - margin.right -margin.left,
+	width = 750 - margin.right -margin.left,
 	height = 500 -margin.top - margin.bottom;
 //the g element is used as a container for grouping objects.
 let svg = d3.select('body')
@@ -94,4 +94,23 @@ d3.csv("state_guest.csv", function(error, data){
 		.call(yAxis)
 		.style('font-size', '12px')
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

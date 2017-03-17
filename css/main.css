@@ -4,3 +4,9 @@
 	stroke: #000;
 	shape-rendering: crispEdges;
 }
+
+.arc path {
+	stroke: #fff;
+	margin-left: 750px;
+
+}
