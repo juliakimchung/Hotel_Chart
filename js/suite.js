@@ -1,9 +1,9 @@
  let widths = 600,
- 		 heights = 450,
+ 		 heights = 520,
      radius = Math.min(widths, heights)/2;
 
 let color = d3.scale.ordinal()
-	.range(["#98abc5", "#a05d56",  "#6b486b", "#ff8c00"]);
+	.range(["#289976", "#b1ff91",  "#ffe877", "#ff5600"]);
 
 
 let pie = d3.layout.pie()

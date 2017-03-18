@@ -34,9 +34,11 @@ class ReservationData():
 			cursor = reservation.cursor()
 
 			try:
-				cursor.execute("""SELECT r.id, Count(r.id)
-													FROM hotel_api_reservation  r
-													WHERE r.check_in_date  BETWEEN '2017-03-01 00:00:00' AND '2017-03-31 00:00:00 """)
+				cursor.execute("""SELECT r.check_in_date, Count(r.id)
+													FROM hotel_api_reservation  r 
+													WHERE r.check_in_date  BETWEEN '2017-01-01 00:00:00' AND '2017-12-31 00:00:00'
+													GROUP BY r.check_in_date
+													ORDER BY r.check_in_date """)
 
 			except sqlite3.OperationalError:
 

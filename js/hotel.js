@@ -1,5 +1,5 @@
-let margin = { top: 20, right: 10, bottom:100, left: 40},
-	width = 750 - margin.right -margin.left,
+let margin = { top: 10, right: 45, bottom:75, left: 80},
+	width = 700 - margin.right -margin.left,
 	height = 500 -margin.top - margin.bottom;
 //the g element is used as a container for grouping objects.
 let svg = d3.select('body')
@@ -66,7 +66,7 @@ d3.csv("state_guest.csv", function(error, data){
 			'width': xScale.rangeBand(),
 			'height': function(d){ return height - yScale(d.count);}
 		})
-		.style('fill', function(d, i){ return 'rgb(20, 20, ' + ((i*30)+ 100)+ ')'})
+		.style('fill', function(d, i){ return '#159e31'})
 	//label the bars
 
 	svg.selectAll('text')
@@ -94,23 +94,6 @@ d3.csv("state_guest.csv", function(error, data){
 		.call(yAxis)
 		.style('font-size', '12px')
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
