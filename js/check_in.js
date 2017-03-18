@@ -47,6 +47,8 @@ d3.csv("hotel_check_in.csv", function(error, data){
 		return d.Counts;
 	})]);
 
+	
+
 // draw the bars
 	svg2.selectAll('rect')
 		.data(data)

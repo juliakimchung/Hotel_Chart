@@ -49,6 +49,7 @@ d3.csv("state_guest.csv", function(error, data){
 		return d.count
 	})]);
 
+	
 // draw the bars
 	svg.selectAll('rect')
 		.data(data)
@@ -66,7 +67,7 @@ d3.csv("state_guest.csv", function(error, data){
 			'width': xScale.rangeBand(),
 			'height': function(d){ return height - yScale(d.count);}
 		})
-		.style('fill', function(d, i){ return '#159e31'})
+		.style('fill', function(d, i){ return '#53db50'})
 	//label the bars
 
 	svg.selectAll('text')
