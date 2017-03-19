@@ -67,7 +67,7 @@ d3.csv("revenue.csv", function(error, data){
 				'width': xScale7.rangeBand(),
 				'height': function(d){ return ht - yScale7(d.Revenue);}
 			})
-			.style('fill', function(d, i){ return '#93c700' });
+			.style('fill', function(d, i){ return '#159E31' });
 			
 		//label the bars
 
