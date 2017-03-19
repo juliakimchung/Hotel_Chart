@@ -15,11 +15,27 @@ class Guest_db():
 		"""
 
 		with sqlite3.connect('hotel_api_guest.db') as guest:
-			cursor = proc.cursor()
+			cursor = guest.cursor()
 
 			cursor.execute("""SELECT g.state, COUNT(g.state)
 												FROM hotel_api_guest g
 												GROUP BY g.state""")
+			result = cursor.fetchall()
+
+		return results
+
+	
+	def get_all_guest_payment_type(self):
+		"""
+		This method is to get all guest data
+		"""
+
+		with sqlite3.connect('hotel_api_paymenttype.db') as payment:
+			cursor = payment.cursor()
+
+			cursor.execute("""SELECT p.name, COUNT(p.id)
+												FROM hotel_api_paymenttype p
+												GROUP BY p.name""")
 			result = cursor.fetchall()
 
 		return results

@@ -1,6 +1,6 @@
 margin = { top: 10, right: 10, bottom:100, left: 60};
 let width1 = 1350 - margin.right -margin.left;
-let height1 = 500 -margin.top - margin.bottom;
+let height1 = 450-margin.top - margin.bottom;
 //The "g" element is used as a container for grouping objects
 let svg2 = d3.select('body')
 		.append('svg')
@@ -30,7 +30,7 @@ let yAxis1 = d3.svg.axis()
 	.scale(yScale1)
 	.orient("left")
 
-d3.csv("hotel_check_in.csv", function(error, data){
+d3.csv("res.csv", function(error, data){
 	if(error) console.log("Error: data not loaded");
 
 	data.forEach(function(d) {
@@ -66,7 +66,7 @@ d3.csv("hotel_check_in.csv", function(error, data){
 			'width': xScale1.rangeBand(),
 			'height': function(d){ return height1 - yScale1(d.Counts);}
 		})
-		.style('fill', function(d, i){ return 'rgb(255, 162,0)'})
+		.style('fill', function(d, i){ return '#ff530d'})
 	//label the bars
 
 	svg2.selectAll('text')

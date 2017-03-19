@@ -1,5 +1,5 @@
- let widths = 600,
- 		 heights = 520,
+ let widths = 450,
+ 		 heights = 450,
      radius = Math.min(widths, heights)/2;
 
 let color = d3.scale.ordinal()

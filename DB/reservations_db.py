@@ -42,3 +42,48 @@ class ReservationData():
 
 			except sqlite3.OperationalError:
 
+	def get_average_length_of_stay(self, reservation):
+
+		with sqlite3.connect("hotel_api.db") as reservation:
+			cursor = reservation.cursor()
+
+			try:
+				cursor.execute("""SELECT julianday(r.check_out_date) - julianday(r.check_in_date)
+ 													FROM hotel_api_reservation r 
+ 													ORDER BY r.id """)
+			except sqlite3.OperationalError:
+
+
+	def get_revenue_by_month(self, reservation):
+
+		with sqlite3.connect('hotel_api_db')as reservation:
+			cursor = reservation.cursor()
+
+			try: 
+				cursor.execute("""SELECT SUM( r.total) AS January
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-01-01 00:00:00' AND "2017-01-31 00:00:00"
+
+													SELECT SUM( r.total) AS February
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-02-01 00:00:00' AND "2017-02-27 00:00:00"
+
+													SELECT SUM( r.total) AS March
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-03-01 00:00:00' AND "2017-03-31 00:00:00"
+
+													SELECT SUM( r.total) AS April
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-04-01 00:00:00' AND "2017-04-30 00:00:00"
+
+													SELECT SUM( r.total) AS May
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-05-01 00:00:00' AND "2017-05-31 00:00:00"
+
+													SELECT SUM( r.total) AS June
+													FROM hotel_api_reservation r 
+													WHERE r.check_in_date BETWEEN '2017-06-01 00:00:00' AND "2017-06-30 00:00:00"
+													""")
+				except sqlite3.OperationalError:
+
+
