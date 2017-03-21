@@ -1,4 +1,4 @@
-let margin = { top: 10, right: 45, bottom:75, left: 80},
+let margin = { top: 30, right: 45, bottom:75, left: 80},
 	width = 650 - margin.right -margin.left,
 	height = 450 -margin.top - margin.bottom;
 //the g element is used as a container for grouping objects.
@@ -79,7 +79,8 @@ d3.csv("guest.csv", function(error, data){
 		.attr('x', function(d){return xScale(d.state) + xScale.rangeBand()/2;})
 		.attr('y', function(d) {return yScale(d.count) + 12;})
 		.style('fill', 'white')
-		.style('text-anchor', 'middle');
+		.style('text-anchor', 'middle')
+
 	//draw the xAxis
 	svg.append('g')	
 		.attr('class', 'x axis')
@@ -95,6 +96,15 @@ d3.csv("guest.csv", function(error, data){
 		.attr('class', 'y axis')
 		.call(yAxis)
 		.style('font-size', '12px')
+
+	svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 30 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .style("text-decoration", "underline")  
+        .text("States vs Guests");
+
 });
 
 

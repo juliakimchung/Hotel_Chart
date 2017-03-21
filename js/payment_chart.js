@@ -1,4 +1,4 @@
-let margin7 = {top:20, right:20, bottom:20, left:20},
+let margin7 = {top:80, right:20, bottom:20, left:20},
 		widths1 = 450,
  		heights1 = 450,
     radius1 = widths1/2;
@@ -49,6 +49,13 @@ d3.csv("payment.csv", function(error, data){
 		.style('text-anchor', 'middle')
 		.text(function(d) {return d.data.name})
 
+	gg.append("text")
+        .attr("x", (width5 / 2))             
+        .attr("y",0- (margin5.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .style("text-decoration", "underline")  
+        .text("Most popular payment type between 1/1/17-6/30/17");
 
 
 
