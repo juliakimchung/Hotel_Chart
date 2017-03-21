@@ -30,7 +30,7 @@ let yAxis5 = d3.svg.axis()
 		.scale(yScale5)
 		.orient("left")
 
-d3.csv("len_stay.csv", function(error, data){
+d3.csv("len.csv", function(error, data){
 		if(error) console.log("Error: data not loaded");
 		data.forEach(function(d) {
 			d.id =  d.id;

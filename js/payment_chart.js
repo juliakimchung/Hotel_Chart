@@ -20,13 +20,13 @@ let arc3 = d3.svg.arc()
 	.outerRadius(radius -10)
 	.innerRadius(radius -100)
 
-d3.csv("payment.csv", function(error, data){
+d3.csv("paymenttype.csv", function(error, data){
 	data.forEach(function(d){
 		d.COUNT = +d.COUNT;
 		console.log("d.Count", d.COUNT);
 	});
 
-let gg = svg3.selectAll('.arc')
+	let gg = svg3.selectAll('.arc')
 			.data(pie(data))
 			.enter().append('g')
 			.attr('class', 'arc');
@@ -50,5 +50,3 @@ let gg = svg3.selectAll('.arc')
 
 
 });
-
-

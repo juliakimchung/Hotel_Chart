@@ -20,7 +20,7 @@ let arc = d3.svg.arc()
 	.outerRadius(radius -10)
 	.innerRadius(radius -150)
 
-d3.csv("suite_reserve_count.csv", function(error, data){
+d3.csv("suite.csv", function(error, data){
 	data.forEach(function(d){
 		d.Count = +d.Count;
 		console.log("d.Count", d.Count);
@@ -34,6 +34,7 @@ d3.csv("suite_reserve_count.csv", function(error, data){
 	g.append('path')
 		.attr('d', arc)
 		.style('fill', function(d){
+			console.log("d from suite", d);
 			return color(d.data.Name); 
 		});
 
