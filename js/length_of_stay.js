@@ -91,7 +91,7 @@ d3.csv("len.csv", function(error, data){
         .attr("text-anchor", "middle")  
         .style("font-size", "22px") 
         .style("text-decoration", "underline")  
-        .text("Length of Stay by Reservations between 1/1/17-6");
+        .text("Length of Stay by Reservations between 1/1/17-6/30/17");
 
 });
 
