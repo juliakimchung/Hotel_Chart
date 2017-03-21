@@ -8,12 +8,12 @@ class ReservationData():
 
 	"""
 
-	def get_all_reservations_by_rooms(self, reservation):
+	def get_all_reservations_by_rooms(self):
 		"""
 		This method is to get reservation data
 		"""
 
-		with sqlite3.connect("hotel_api.db") as reservation:
+		with sqlite3.connect("../Hotel/db.sqlite3") as reservation:
 			cursor = reservation.cursor()
 
 			try:
@@ -23,40 +23,57 @@ class ReservationData():
 													GROUP BY h.name""")
 
 			except sqlite3.OperationalError:
+				pass
+
+			result = cursor.fetchall()
+
+		return result
 
 
-	def get_all_reservations_by_dates(self, reservation):
+
+	def get_all_reservations_by_dates(self):
 		"""
 		This method is to get reservation data
 		"""
 
-		with sqlite3.connect("hotel_api.db") as reservation:
+		with sqlite3.connect("../Hotel/db.sqlite3") as reservation:
 			cursor = reservation.cursor()
 
-			try:
-				cursor.execute("""SELECT r.check_in_date, Count(r.id)
+			
+			cursor.execute("""SELECT r.check_in_date, Count(r.id)
 													FROM hotel_api_reservation  r 
 													WHERE r.check_in_date  BETWEEN '2017-01-01 00:00:00' AND '2017-12-31 00:00:00'
 													GROUP BY r.check_in_date
 													ORDER BY r.check_in_date """)
 
-			except sqlite3.OperationalError:
+			
 
-	def get_average_length_of_stay(self, reservation):
+			result = cursor.fetchall()
 
-		with sqlite3.connect("hotel_api.db") as reservation:
+		return result
+
+
+	def get_length_of_stay(self):
+
+		with sqlite3.connect("../Hotel/db.sqlite3") as reservation:
 			cursor = reservation.cursor()
 
 			try:
-				cursor.execute("""SELECT julianday(r.check_out_date) - julianday(r.check_in_date)
+				cursor.execute("""SELECT r.id, julianday(r.check_out_date) - julianday(r.check_in_date)
  													FROM hotel_api_reservation r 
  													ORDER BY r.id """)
 			except sqlite3.OperationalError:
+				pass
+
+			result = cursor.fetchall()
+
+		return result
 
 
-	def get_revenue_by_month(self, reservation):
 
-		with sqlite3.connect('hotel_api_db')as reservation:
+	def get_revenue_by_month(self):
+
+		with sqlite3.connect('../Hotel/db.sqlite3')as reservation:
 			cursor = reservation.cursor()
 
 			try: 
@@ -84,6 +101,12 @@ class ReservationData():
 													FROM hotel_api_reservation r 
 													WHERE r.check_in_date BETWEEN '2017-06-01 00:00:00' AND "2017-06-30 00:00:00"
 													""")
-				except sqlite3.OperationalError:
+			except sqlite3.OperationalError:
+				pass
+
+			result = cursor.fetchall()
+
+		return result
+
 
 

@@ -1,6 +1,5 @@
 import sqlite3
-import sys
-sys.path.append("../")
+
 
 class Guest_db():
 	"""
@@ -14,7 +13,7 @@ class Guest_db():
 		This method is to get all guest data
 		"""
 
-		with sqlite3.connect('hotel_api_guest.db') as guest:
+		with sqlite3.connect('../Hotel/db.sqlite3') as guest:
 			cursor = guest.cursor()
 
 			cursor.execute("""SELECT g.state, COUNT(g.state)
@@ -22,7 +21,7 @@ class Guest_db():
 												GROUP BY g.state""")
 			result = cursor.fetchall()
 
-		return results
+		return result
 
 	
 	def get_all_guest_payment_type(self):
@@ -30,7 +29,7 @@ class Guest_db():
 		This method is to get all guest data
 		"""
 
-		with sqlite3.connect('hotel_api_paymenttype.db') as payment:
+		with sqlite3.connect('../Hotel/db.sqlite3') as payment:
 			cursor = payment.cursor()
 
 			cursor.execute("""SELECT p.name, COUNT(p.id)
@@ -38,4 +37,4 @@ class Guest_db():
 												GROUP BY p.name""")
 			result = cursor.fetchall()
 
-		return results
+		return result
