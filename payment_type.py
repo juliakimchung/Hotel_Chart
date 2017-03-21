@@ -2,12 +2,12 @@ from DB import guest_db
 
 def get_payment_from_db():
 	data = guest_db.Guest_db().get_all_guest_payment_type()
-	print(data)
 	res = open('paymenttype.csv', 'w')
 	for d in data:
 		el = str(d[1])
 		d = (d[0], el)
 		myData = ','.join(d)
+		print(myData)
 		res.write(myData + '\n')
 	res.close()
 
