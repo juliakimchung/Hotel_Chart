@@ -1,4 +1,4 @@
-margin = { top: 10, right: 10, bottom:100, left: 60};
+let margin0 = { top: 90, right: 10, bottom:120, left: 60};
 let width1 = 1350 - margin.right -margin.left;
 let height1 = 450-margin.top - margin.bottom;
 //The "g" element is used as a container for grouping objects
@@ -93,6 +93,14 @@ d3.csv("reservation.csv", function(error, data){
 		.attr('class', 'y axis')
 		.call(yAxis1)
 		.style('font-size', '12px')
+
+	svg2.append("text")
+        .attr("x", (width1 / 2))             
+        .attr("y",60- (margin0.top / 2))
+        .attr("text-anchor", "left")  
+        .style("font-size", "22px") 
+        .style("text-decoration", "underline")  
+        .text("Number of Reservations between 1/1/17-6/30/17");
 });
 
 

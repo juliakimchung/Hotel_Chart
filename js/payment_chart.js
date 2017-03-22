@@ -1,4 +1,4 @@
-let margin7 = {top:20, right:20, bottom:20, left:20},
+let margin7 = {top:80, right:20, bottom:20, left:20},
 		widths1 = 450,
  		heights1 = 450,
     radius1 = widths1/2;
@@ -37,6 +37,7 @@ d3.csv("payment.csv", function(error, data){
 		console.log("data from let gg=svg3.selectAll", data);
 	//append the path of the arc
 	gg.append('path')
+		.attr('id', "wavy")
 		.attr('d', arc3)
 		.style('fill', function(d){
 			console.log("d", d);
@@ -49,10 +50,8 @@ d3.csv("payment.csv", function(error, data){
 		.style('text-anchor', 'middle')
 		.text(function(d) {return d.data.name})
 
-
-
-
-
+	
+	
 
 
 });

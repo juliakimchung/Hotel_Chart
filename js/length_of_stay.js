@@ -1,4 +1,4 @@
-let margin5 = { top: 10, right: 10, bottom:100, left: 80},
+let margin5 = { top: 120, right: 10, bottom:100, left: 80},
 		width5 = 1350 - margin5.right -margin5.left,
 		height5 = 550 -margin5.top - margin5.bottom;
 //the g element is used as a container for grouping objects.
@@ -84,6 +84,15 @@ d3.csv("len.csv", function(error, data){
 			.attr('class', 'y axis')
 			.call(yAxis5)
 			.style('font-size', '12px')
+
+		svg5.append("text")
+        .attr("x", (width5 / 2))             
+        .attr("y",80- (margin5.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .style("text-decoration", "underline")  
+        .text("Length of Stay by Reservations between 1/1/17-6/30/17");
+
 });
 
 

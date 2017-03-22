@@ -1,4 +1,4 @@
-margin = { top: 10, right: 45, bottom:75, left: 80};
+margin2 = { top: 50, right: 45, bottom:75, left: 80};
 let wd = 650 - margin.right -margin.left;
 let ht= 450 -margin.top - margin.bottom;
 //the g element is used as a container for grouping objects.
@@ -77,7 +77,7 @@ d3.csv("revenue.csv", function(error, data){
 			.append('text')
 			.text(function(d){ return d.Revenue})
 			.attr('x', function(d){return xScale7(d.Month) + xScale7.rangeBand()/2;})
-			.attr('y', function(d) {return yScale7(d.Revenue) + 12;})
+			.attr('y', function(d) {return yScale7(d.Revenue) + 20;})
 			.style('fill', 'white')
 			.style('text-anchor', 'middle');
 		//draw the xAxis
@@ -96,6 +96,14 @@ d3.csv("revenue.csv", function(error, data){
 			.attr('class', 'y axis')
 			.call(yAxis7)
 			.style('font-size', '12px')
+
+		svg7.append("text")
+        .attr("x", (wd / 2))             
+        .attr("y",0 - (margin2.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .style("text-decoration", "underline")  
+        .text("Room Revenue by the Month between 1/1/17-6/30/17");
 });
 
 
