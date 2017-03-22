@@ -37,6 +37,7 @@ d3.csv("payment.csv", function(error, data){
 		console.log("data from let gg=svg3.selectAll", data);
 	//append the path of the arc
 	gg.append('path')
+		.attr('id', "wavy")
 		.attr('d', arc3)
 		.style('fill', function(d){
 			console.log("d", d);
@@ -49,17 +50,8 @@ d3.csv("payment.csv", function(error, data){
 		.style('text-anchor', 'middle')
 		.text(function(d) {return d.data.name})
 
-	gg.append("text")
-        .attr("x", (width5 / 2))             
-        .attr("y",0- (margin5.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "22px") 
-        .style("text-decoration", "underline")  
-        .text("Most popular payment type between 1/1/17-6/30/17");
-
-
-
-
+	
+	
 
 
 });

@@ -13,5 +13,20 @@
 
 svg {
 	float: left;
-	margin: 50px;
+	margin-left: 120px;
+}
+
+.suite {
+	margin-top: 50px;
+	margin-left:500px;
+	margin-right: 0;
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.payment {
+	margin-top: 1200px;
+	margin-left: 500px;
+	font-size: 20px;
+	text-decoration: underline;
 }
