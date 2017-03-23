@@ -21,7 +21,7 @@ let svg3 = d3.select('body').append('svg')
 		.attr('transform', 'translate('+ widths1/2 + "," + heights1/2 + ")");
 
 
-d3.csv("payment.csv", function(error, data){
+d3.csv("paymenttype.csv", function(error, data){
 	console.log("data from paymenttype",data );
 	data.forEach(function(d){
 		d.counts = +d.counts;

@@ -1,5 +1,5 @@
-let margin5 = { top: 120, right: 10, bottom:100, left: 80},
-		width5 = 1350 - margin5.right -margin5.left,
+let margin5 = { top: 120, right: 10, bottom:100, left: 20},
+		width5 = 1200 - margin5.right -margin5.left,
 		height5 = 550 -margin5.top - margin5.bottom;
 //the g element is used as a container for grouping objects.
 let svg5 = d3.select('body')
