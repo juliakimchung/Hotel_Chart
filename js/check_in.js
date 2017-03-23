@@ -96,7 +96,7 @@ d3.csv("reservation.csv", function(error, data){
 
 	svg2.append("text")
         .attr("x", (width1 / 2))             
-        .attr("y",60- (margin0.top / 2))
+        .attr("y",90- (margin0.top / 2))
         .attr("text-anchor", "left")  
         .style("font-size", "22px") 
         .style("text-decoration", "underline")  

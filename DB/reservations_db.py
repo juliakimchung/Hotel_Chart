@@ -40,7 +40,7 @@ class ReservationData():
 			cursor = reservation.cursor()
 
 			
-			cursor.execute("""SELECT r.check_in_date, Count(r.id)
+			cursor.execute("""SELECT r.check_in_date, Count(r.id) AS Counts
 													FROM hotel_api_reservation  r 
 													WHERE r.check_in_date  BETWEEN '2017-01-01 00:00:00' AND '2017-12-31 00:00:00'
 													GROUP BY r.check_in_date
@@ -59,7 +59,7 @@ class ReservationData():
 			cursor = reservation.cursor()
 
 			try:
-				cursor.execute("""SELECT r.id, julianday(r.check_out_date) - julianday(r.check_in_date)
+				cursor.execute("""SELECT r.id, julianday(r.check_out_date) - julianday(r.check_in_date) AS stay_len
  													FROM hotel_api_reservation r 
  													ORDER BY r.id """)
 			except sqlite3.OperationalError:
