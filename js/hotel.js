@@ -103,7 +103,7 @@ d3.csv("guest.csv", function(error, data){
         .attr("text-anchor", "middle")  
         .style("font-size", "22px") 
         .style("text-decoration", "underline")  
-        .text("States vs Guests");
+        .text("Guests per State");
 
 });
 

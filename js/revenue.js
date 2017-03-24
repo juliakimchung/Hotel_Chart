@@ -103,7 +103,7 @@ d3.csv("revenue.csv", function(error, data){
         .attr("text-anchor", "middle")  
         .style("font-size", "22px") 
         .style("text-decoration", "underline")  
-        .text("Room Revenue by the Month between 1/1/17-6/30/17");
+        .text("Revenue by the Month between 1/1/17-6/30/17");
 });
 
 
