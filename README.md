@@ -1,4 +1,4 @@
-This is a data anaylsis using a d3 graph for guest origin, showing what states are the guests from.
+This is a data anaylsis using a d3 graph for guest origin, showing what states the guests are from.
 
 This is  a data anaylsis using a d3 pie chart for the suite rooms by the popularity.
 
