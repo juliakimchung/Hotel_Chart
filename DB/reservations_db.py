@@ -81,32 +81,34 @@ class ReservationData():
 													FROM hotel_api_reservation r 
 													WHERE r.check_in_date BETWEEN '2017-01-01 00:00:00' AND "2017-01-31 00:00:00"
 													GROUP BY SUM(r.total)
+													ORDER BY January
 													UNION
 													SELECT SUM( r.total) AS February
 													FROM hotel_api_reservation r 
 													WHERE r.check_in_date BETWEEN '2017-02-01 00:00:00' AND "2017-02-27 00:00:00"
 													GROUP BY SUM(r.total)
-													-- UNION
-													-- SELECT SUM( r.total) AS March
-													-- FROM hotel_api_reservation r 
-													-- WHERE r.check_in_date BETWEEN '2017-03-01 00:00:00' AND "2017-03-31 00:00:00"
-													-- GROUP BY SUM(r.total)
-													-- UNION
-													-- SELECT SUM( r.total) AS April
-													-- FROM hotel_api_reservation r 
-													-- WHERE r.check_in_date BETWEEN '2017-04-01 00:00:00' AND "2017-04-30 00:00:00"
-													-- GROUP BY SUM(r.total)
-													-- UNION
-													-- SELECT SUM( r.total) AS May
-													-- FROM hotel_api_reservation r 
-													-- WHERE r.check_in_date BETWEEN '2017-05-01 00:00:00' AND "2017-05-31 00:00:00"
-													-- GROUP BY SUM(r.total)
-													-- UNION													
-													-- SELECT SUM( r.total) AS June
-													-- FROM hotel_api_reservation r 
-													-- WHERE r.check_in_date BETWEEN '2017-06-01 00:00:00' AND "2017-06-30 00:00:00"
-													-- GROUP BY SUM(r.total);
-													""")
+													ORDER BY January""")
+													# -- UNION
+													# -- SELECT SUM( r.total) AS March
+													# -- FROM hotel_api_reservation r 
+													# -- WHERE r.check_in_date BETWEEN '2017-03-01 00:00:00' AND "2017-03-31 00:00:00"
+													# -- GROUP BY SUM(r.total)
+													# -- UNION
+													# -- SELECT SUM( r.total) AS April
+													# -- FROM hotel_api_reservation r 
+													# -- WHERE r.check_in_date BETWEEN '2017-04-01 00:00:00' AND "2017-04-30 00:00:00"
+													# -- GROUP BY SUM(r.total)
+													# -- UNION
+													# -- SELECT SUM( r.total) AS May
+													# -- FROM hotel_api_reservation r 
+													# -- WHERE r.check_in_date BETWEEN '2017-05-01 00:00:00' AND "2017-05-31 00:00:00"
+													# -- GROUP BY SUM(r.total)
+													# -- UNION													
+													# -- SELECT SUM( r.total) AS June
+													# -- FROM hotel_api_reservation r 
+													# -- WHERE r.check_in_date BETWEEN '2017-06-01 00:00:00' AND "2017-06-30 00:00:00"
+													# -- GROUP BY SUM(r.total);
+													# 								""")
 
 			except sqlite3.OperationalError:
 				pass
